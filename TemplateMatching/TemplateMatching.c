@@ -124,6 +124,22 @@ int main(int argc, char *argv[]) {
 		//print number of matches
 		printf("%d\n", match_count);
 		//get more than one pic and template from user
-
+		if (argc_temp > 0) {
+			argIter++;
+			I = ReadBMP(argv[argIter], &I_width, &I_height);
+			argIter++;
+			argc_temp--;
+			T = ReadBMP(argv[argIter], &T_width, &T_height);
+			argc_temp--;
+		}
+		else {
+			I = 0;
+			T = 0;
+		}
 	}
+	free(I);
+	free(T);
+	return 0;
+}
+	
 }
