@@ -6,6 +6,28 @@
 #include <omp.h>
 #include "bmp_util.h"
 
+///////////////////////////////////////////////////////////////////////////////
+// this function finds min of differences as one match 
+int getMinimum(float * difference, int M, int N, int T_size) {
+	float minimum = difference[0];
+	int count = 0;
+	int i, j;
+	for (i = 0; i < N; i++) {
+		for (j = 0; j < M; j++) {
+			if (difference[i * M + j] < minimum) {
+				minimum = difference[i * M + j];
+				count = 0;
+			}
+			if (difference[i * M + j] == minimum && difference[i * M + j] <= (255 / T_size)) {
+				count++;
+			}
+		}
+	}
+	//printf("%d\n", count);
+	//printf("\n%f min: \n",min);
+	return count;
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 int getMatch(float *I, float *T, int Iw, int Ih, int Tw, int Th) {
 	float *differences;
