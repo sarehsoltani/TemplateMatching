@@ -24,7 +24,6 @@ int main(int argc, char *argv[]) {
 	if (I == 0 || T == 0) {
 		exit(1);
 	}
-
 	while (I != 0 && T != 0) {
 		if (I_width < T_width || I_height < T_height) {
 			fprintf(stderr, "Error: The template is larger than the picture\n");
