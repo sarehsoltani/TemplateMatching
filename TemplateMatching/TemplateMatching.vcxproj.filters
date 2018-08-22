@@ -18,5 +18,16 @@
     <ClInclude Include="bmp.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="bmp_util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bmp_util.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TemplateMatching.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

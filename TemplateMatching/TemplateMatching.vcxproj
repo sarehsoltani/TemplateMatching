@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bmp_util.c" />
+    <ClCompile Include="TemplateMatching.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

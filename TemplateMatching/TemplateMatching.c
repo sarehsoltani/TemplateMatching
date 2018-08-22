@@ -6,7 +6,6 @@
 #include <omp.h>
 #include "bmp_util.h"
 
-///////////////////////////////////////////////////////////////////////////////
 // this function finds min of differences as one match 
 int getMinimum(float * difference, int M, int N, int T_size) {
 	float minimum = difference[0];
@@ -142,4 +141,3 @@ int main(int argc, char *argv[]) {
 	return 0;
 }
 	
-}
