@@ -115,5 +115,15 @@ int main(int argc, char *argv[]) {
 			fprintf(stderr, "Error: The template is larger than the picture\n");
 			exit(EXIT_FAILURE);
 		}
+		// Find numbers of matches
+		match_count = getMatch(I, T, I_width, I_height, T_width, T_height);
+		// rotate  90 degree clockwise Template
+		rotate(T, T_width, T_height);
+		//Find numbers of matches between image and rotated template
+		match_count += getMatch(I, T, I_width, I_height, T_height, T_width);
+		//print number of matches
+		printf("%d\n", match_count);
+		//get more than one pic and template from user
+
 	}
 }
