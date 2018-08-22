@@ -54,7 +54,22 @@ int getMatch(float *I, float *T, int Iw, int Ih, int Tw, int Th) {
 	counter = getMinimum(differences, (Iw - Tw + 1), (Ih - Th + 1), Th*Tw);
 	return counter;
 }
+
 ///////////////////////////////////////////////////////////////////////////////
+//this function Flips templateTmage
+void flip(float *T, int Tw, int Th) {
+	int i, j;
+	for (i = 0; i < Th; ++i) {
+		for (j = 0; j < Tw / 2; ++j) {
+			int k = Tw - 1 - j;
+			float temp = T[i * Tw + j];
+			T[i * Tw + j] = T[i * Tw + k];
+			T[i * Tw + k] = temp;
+			k--;
+		}
+	}
+}
+////////////////////////////////////////////////////////////////////////////////
 
 int main(int argc, char *argv[]) {
 	int I_width, I_height, T_width, T_height;
