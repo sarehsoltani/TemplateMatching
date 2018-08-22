@@ -71,6 +71,27 @@ void flip(float *T, int Tw, int Th) {
 }
 ////////////////////////////////////////////////////////////////////////////////
 
+void rotate(float* image, int cols, int rows) {
+	int i, j, s, n;
+	float* T_image = 0;
+	int npixels_T = rows * cols;
+	T_image = (float *)malloc(sizeof(float) * npixels_T);
+	for (i = 0; i < cols; ++i) {
+		for (j = 0; j < rows; ++j) {
+			T_image[j + i*rows] = image[i + j*cols];
+		}
+	}
+
+	flip(T_image, rows, cols);
+
+	for (s = 0; s < cols; s++) {
+		for (n = 0; n < rows; n++) {
+			image[n + s*rows] = T_image[n + s*rows];
+		}
+	}
+}
+////////////////////////////////////////////////////////////////////////////////
+
 int main(int argc, char *argv[]) {
 	int I_width, I_height, T_width, T_height;
 	float *I, *T;
