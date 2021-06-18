@@ -1,0 +1,6 @@
+﻿  match.c
+  Change configuration to Release for a fast execution.
+  Change platform to x64 for more memory.
+  Enable nested parallelism if you wish to have parallel region within parallel region.
+  TemplateMatching.vcxproj -> C:\Users\Sare\Documents\Visual Studio 2015\Projects\FinalProject\TemplateMatching\Debug\TemplateMatching.exe
+  TemplateMatching.vcxproj -> C:\Users\Sare\Documents\Visual Studio 2015\Projects\FinalProject\TemplateMatching\Debug\TemplateMatching.pdb (Full PDB)
